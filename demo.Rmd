@@ -26,14 +26,14 @@ library(dimple)
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Bar chart
+### Data Frame 
 
 ```{r}
 print(df_CI, quote = TRUE, row.names = FALSE)
 #plot(df_CI["sed by Open Source projects"])
 
 ```
-### TeamCity
+### 
 
 ```{r}
 
@@ -47,18 +47,16 @@ dimple(df_CI,
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Travis CI
+### Plot CI_name vs used_by
 
 ```{r}
 plot(df_CI$CI_Name,df_CI$used_by)
 
 ```
 
-### GitHub Actions
+### 
 
 ```{r}
-(dd <- data.frame(x = 1:8, f = gl(2,4), ch = I(letters[1:8])))
-     # print() with defaults
-print(dd, quote = TRUE, row.names = FALSE)
+
 
 ```
