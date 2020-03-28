@@ -1,0 +1,64 @@
+
+---
+title: "Hard Test/CI- Sunn-e"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+
+
+
+
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(dimple)
+#pacman::p_load(flexdashboard, rcdimple, DT)
+# Dataframe
+(df_CI <- data.frame("SN" = 1:4, "used_by" = c(450,36,388,0), "CI_Name" = c("Jenkins","TeamCity","Travis CI", "GitHub Actions")))
+```
+
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Bar chart
+
+```{r}
+print(df_CI, quote = TRUE, row.names = FALSE)
+#plot(df_CI["sed by Open Source projects"])
+
+```
+### TeamCity
+
+```{r}
+
+dimple(df_CI,
+       xCategory = "CI_name" ,
+       yCategory = "used_by",
+       series="Channel")
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Travis CI
+
+```{r}
+plot(df_CI$CI_Name,df_CI$used_by)
+
+```
+
+### GitHub Actions
+
+```{r}
+(dd <- data.frame(x = 1:8, f = gl(2,4), ch = I(letters[1:8])))
+     # print() with defaults
+print(dd, quote = TRUE, row.names = FALSE)
+
+```
